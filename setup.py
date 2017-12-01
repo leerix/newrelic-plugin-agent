@@ -16,7 +16,9 @@ install_requires = ['helper>=2.2.2', 'requests>=2.0.0']
 tests_require = []
 extras_require = {'mongodb': ['pymongo'],
                   'pgbouncer': ['psycopg2'],
-                  'postgresql': ['psycopg2']}
+                  'postgresql': ['psycopg2'],
+                  'pg_cluster': ['psycopg2'],
+                  'redis_cluster': ['redis']}
 
 if sys.version_info < (2, 7, 0):
     install_requires.append('importlib')

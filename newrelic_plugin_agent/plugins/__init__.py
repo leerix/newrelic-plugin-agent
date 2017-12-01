@@ -20,4 +20,7 @@ available = {
     'rabbitmq': 'newrelic_plugin_agent.plugins.rabbitmq.RabbitMQ',
     'redis': 'newrelic_plugin_agent.plugins.redis.Redis',
     'riak': 'newrelic_plugin_agent.plugins.riak.Riak',
-    'uwsgi': 'newrelic_plugin_agent.plugins.uwsgi.uWSGI'}
+    'uwsgi': 'newrelic_plugin_agent.plugins.uwsgi.uWSGI',
+    'pg_cluster': 'newrelic_plugin_agent.plugins.pg_cluster.PostgreSqlCluster',
+    'redis_cluster':
+        'newrelic_plugin_agent.plugins.redis_cluster.RedisCluster'}

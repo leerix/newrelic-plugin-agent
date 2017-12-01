@@ -288,7 +288,7 @@ class PostgreSQL(base.Plugin):
             LOGGER.critical('Could not connect to %s, skipping stats run: %s',
                             self.__class__.__name__, error)
             return
-        cursor = self.connection.cursor(cursor_factory=extras.DictCursor)
+        cursor = self.connection.cursor(cursor_factory=extras.RealDictCursor)
         self.add_stats(cursor)
         cursor.close()
         self.connection.close()
