@@ -1,6 +1,5 @@
 """
 PostgreSQL Plugin
-
 """
 import logging
 import psycopg2
@@ -28,7 +27,7 @@ TABLE_SIZE_ON_DISK = """SELECT ((sum(relpages)* 8) * 1024) AS
 size_relations FROM pg_class WHERE relkind IN ('r', 't');"""
 TABLE_COUNT = """SELECT count(1) as relations FROM pg_class WHERE
 relkind IN ('r', 't');"""
-EPLICATION_ON_DISK = """SELECT ((sum(relpages)* 8) * 1024) AS
+INDEX_SIZE_ON_DISK = """SELECT ((sum(relpages)* 8) * 1024) AS
 size_indexes FROM pg_class WHERE relkind = 'i';"""
 INDEX_COUNT = """SELECT count(1) as indexes FROM pg_class WHERE
 relkind = 'i';"""
