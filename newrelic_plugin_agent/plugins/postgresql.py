@@ -46,7 +46,6 @@ AS toastindex_blocks_read, sum(tidx_blks_hit) AS toastindex_blocks_hit
 FROM pg_statio_all_tables WHERE schemaname <> 'pg_catalog';"""
 BGWRITER = 'SELECT * FROM pg_stat_bgwriter;'
 DATABASE = 'SELECT * FROM pg_stat_database;'
-<<<<<<< HEAD
 LOCKS = 'SELECT mode, count(mode) AS count FROM pg_locks ' \
         'GROUP BY mode ORDER BY mode;'
 REPLICATION = """
