@@ -28,7 +28,7 @@ TABLE_SIZE_ON_DISK = """SELECT ((sum(relpages)* 8) * 1024) AS
 size_relations FROM pg_class WHERE relkind IN ('r', 't');"""
 TABLE_COUNT = """SELECT count(1) as relations FROM pg_class WHERE
 relkind IN ('r', 't');"""
-INDEX_SIZE_ON_DISK = """SELECT ((sum(relpages)* 8) * 1024) AS
+EPLICATION_ON_DISK = """SELECT ((sum(relpages)* 8) * 1024) AS
 size_indexes FROM pg_class WHERE relkind = 'i';"""
 INDEX_COUNT = """SELECT count(1) as indexes FROM pg_class WHERE
 relkind = 'i';"""
@@ -46,6 +46,7 @@ AS toastindex_blocks_read, sum(tidx_blks_hit) AS toastindex_blocks_hit
 FROM pg_statio_all_tables WHERE schemaname <> 'pg_catalog';"""
 BGWRITER = 'SELECT * FROM pg_stat_bgwriter;'
 DATABASE = 'SELECT * FROM pg_stat_database;'
+<<<<<<< HEAD
 LOCKS = 'SELECT mode, count(mode) AS count FROM pg_locks ' \
         'GROUP BY mode ORDER BY mode;'
 REPLICATION = """
@@ -58,10 +59,10 @@ SELECT
 FROM (
     SELECT
         client_addr, client_hostname, state,
-        ('x' || lpad(split_part(sent_location,   '/', 1), 8, '0'))::bit(32)::bigint AS sent_xlog,
-        ('x' || lpad(split_part(replay_location, '/', 1), 8, '0'))::bit(32)::bigint AS replay_xlog,
-        ('x' || lpad(split_part(sent_location,   '/', 2), 8, '0'))::bit(32)::bigint AS sent_offset,
-        ('x' || lpad(split_part(replay_location, '/', 2), 8, '0'))::bit(32)::bigint AS replay_offset
+        ('x' || lpad(split_part(sent_location::text,   '/', 1), 8, '0'))::bit(32)::bigint AS sent_xlog,
+        ('x' || lpad(split_part(replay_location::text, '/', 1), 8, '0'))::bit(32)::bigint AS replay_xlog,
+        ('x' || lpad(split_part(sent_location::text,   '/', 2), 8, '0'))::bit(32)::bigint AS sent_offset,
+        ('x' || lpad(split_part(replay_location::text, '/', 2), 8, '0'))::bit(32)::bigint AS replay_offset
     FROM pg_stat_replication
 ) AS s;
 """
