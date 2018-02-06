@@ -6,7 +6,6 @@ from __future__ import absolute_import
 import logging
 import os
 import random
-import redis
 from redis.sentinel import Sentinel, MasterNotFoundError
 
 from newrelic_plugin_agent.plugins import base

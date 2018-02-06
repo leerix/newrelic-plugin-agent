@@ -23,4 +23,6 @@ available = {
     'uwsgi': 'newrelic_plugin_agent.plugins.uwsgi.uWSGI',
     'pg_cluster': 'newrelic_plugin_agent.plugins.pg_cluster.PostgreSqlCluster',
     'redis_cluster':
-        'newrelic_plugin_agent.plugins.redis_cluster.RedisCluster'}
+        'newrelic_plugin_agent.plugins.redis_cluster.RedisCluster',
+    'redis_queues':
+        'newrelic_plugin_agent.plugins.redis_queues.RedisQueues'}

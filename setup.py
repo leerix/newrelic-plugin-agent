@@ -18,7 +18,8 @@ extras_require = {'mongodb': ['pymongo'],
                   'pgbouncer': ['psycopg2'],
                   'postgresql': ['psycopg2'],
                   'pg_cluster': ['psycopg2'],
-                  'redis_cluster': ['redis']}
+                  'redis_cluster': ['redis'],
+                  'redis_queue': ['redis']}
 
 if sys.version_info < (2, 7, 0):
     install_requires.append('importlib')
