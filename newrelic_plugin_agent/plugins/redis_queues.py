@@ -8,11 +8,11 @@ import logging
 
 from newrelic_plugin_agent.plugins import base
 
-from redis.sentinel import Sentinel, MasterNotFoundError
+from redis.sentinel import Sentinel
 
 
 class RedisQueues(base.SocketStatsPlugin):
-    GUID = 'com.meetme.newrelic_redis_cluster_agent'
+    GUID = 'com.meetme.newrelic_redis_queues_agent'
 
     def get_config(self):
         self.node_list = self.config.get('nodes', [])
